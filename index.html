@@ -162,7 +162,7 @@
             
         function Load(){
             var loadLists = JSON.parse(localStorage.getItem("LoLChampionTrackerLists"))
-            if(loadLists.CurrentList != null && loadLists.CurrentList != "") curList.value = loadLists.CurrentList
+            if(loadLists != null && loadLists.CurrentList != null && loadLists.CurrentList != "") curList.value = loadLists.CurrentList
             for (let l = 0; l < listList.length; l++){
                 saveStates.Lists.push({List: listList[l], States: []})
                 for (let c = 0; c < champList.length; c++){
