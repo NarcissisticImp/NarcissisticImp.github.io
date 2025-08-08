@@ -54,19 +54,26 @@
                 margin-left: 25px;
                 text-align-last: justify;
             }
+            input{
+                border-radius: 25px;
+                font-size: var(--base-font-size);
+                padding-left: 25px;
+                width: 100%;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <div id="grid" style="width: 80%;"></div>
             <div style="width: 20%; background-color: white;">
-                <div style="padding: 10px; width: fit-content;">
+                <div style="padding: 10px; width: fit-content; max-width: 250px;">
                     <div id="sideboard"></div>
                     <div style="text-align: center;">
                         <button onclick="Update(true)">Mark All</button>
                         <button onclick="Update(false)">Undo All</button>
                     </div>
                     <div id="stats"></div>
+                    <input type="text" id="filter" onkeyup="Search()" placeholder="Search...">
                     <div style="margin-top: 50px; text-align: end;">
                         <button onclick="Export()">Export</button>
                         <input type="file" id="fileInput" accept=".txt" style="display: none;" />
@@ -109,6 +116,15 @@
 
             overlay = document.createElement("div")
             label.appendChild(overlay)
+        }
+
+        var filter = document.getElementById("filter")
+        function Search(){
+            var curFilter = filter.value.toUpperCase().trim()
+            for (var x = 0; x < grid.childNodes.length; x++){
+                grid.childNodes[x].style.display = "";
+                if(curFilter != "" && !grid.childNodes[x].htmlFor.toUpperCase().startsWith(curFilter)) grid.childNodes[x].style.display = "none";
+            }
         }
 
         var sideboard = document.getElementById("sideboard")
@@ -163,7 +179,7 @@
             
         function Load(){
             var loadLists = JSON.parse(localStorage.getItem("LoLChampionTrackerLists"))
-            if(loadLists != null && loadLists.CurrentList != null && loadLists.CurrentList != "") curList.value = loadLists.CurrentList
+            if(loadLists != null &&  loadLists.CurrentList != null && loadLists.CurrentList != "") curList.value = loadLists.CurrentList
             for (let l = 0; l < listList.length; l++){
                 saveStates.Lists.push({List: listList[l], States: []})
                 for (let c = 0; c < champList.length; c++){
