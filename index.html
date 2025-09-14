@@ -158,7 +158,7 @@
 
         var sideboard = document.getElementById("sideboard")
         sideboard.innerHTML += "<div style='margin-bottom: 25px;'>Champion Count: <span style='float:right'>" + champList.length + "</span></div>"
-        selector = "<select id='list' style='width: 100%; border-radius: 25px; font-size: inherit; text-align: center;'>"
+        selector = "<select id='list' style='width: 100%; border-radius: 25px; font-size: inherit; text-align: center; padding: unset;'>"
         var listList = ["Coop vs. AI", "Arena God"].sort()
         for (let l = 0; l < listList.length; l++) {
             selector += "<option value='" + listList[l] + "'>" + listList[l] +"</option>"
@@ -245,3 +245,4 @@
         }
     </script>
 </html>
+
