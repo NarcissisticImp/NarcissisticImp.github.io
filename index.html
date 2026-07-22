@@ -115,7 +115,32 @@
     <script>
         var saveStates = {CurrentList: "", Lists: []}
         var grid = document.getElementById("grid")
-        var champList = ["Aatrox", "Ahri", "Akali", "Akshan", "Alistar", "Ambessa", "Amumu", "Anivia", "Annie", "Aphelios", "Ashe", "Aurelion Sol", "Aurora", "Azir", "Bard", "Bel'Veth", "Blitzcrank", "Brand", "Braum", "Briar", "Caitlyn", "Camille", "Cassiopeia", "Cho'Gath", "Corki", "Darius", "Diana", "Dr. Mundo", "Draven", "Ekko", "Elise", "Evelynn", "Ezreal", "Fiddlesticks", "Fiora", "Fizz", "Galio", "Gangplank", "Garen", "Gnar", "Gragas", "Graves", "Gwen", "Hecarim", "Heimerdinger", "Hwei", "Illaoi", "Irelia", "Ivern", "Janna", "Jarvan IV", "Jax", "Jayce", "Jhin", "Jinx", "K'Sante", "Kai'Sa", "Kalista", "Karma", "Karthus", "Kassadin", "Katarina", "Kayle", "Kayn", "Kennen", "Kha'Zix", "Kindred", "Kled", "Kog'Maw", "LeBlanc", "Lee Sin", "Leona", "Lillia", "Lissandra", "Lucian", "Lulu", "Lux", "Malphite", "Malzahar", "Maokai", "Master Yi", "Mel", "Milio", "Miss Fortune", "Mordekaiser", "Morgana", "Naafiri", "Nami", "Nasus", "Nautilus", "Neeko", "Nidalee", "Nilah", "Nocturne", "Nunu & Willump", "Olaf", "Orianna", "Ornn", "Pantheon", "Poppy", "Pyke", "Qiyana", "Quinn", "Rakan", "Rammus", "Rek'Sai", "Rell", "Renata Glasc", "Renekton", "Rengar", "Riven", "Rumble", "Ryze", "Samira", "Sejuani", "Senna", "Seraphine", "Sett", "Shaco", "Shen", "Shyvana", "Singed", "Sion", "Sivir", "Skarner", "Smolder", "Sona", "Soraka", "Swain", "Sylas", "Syndra", "Tahm Kench", "Taliyah", "Talon", "Taric", "Teemo", "Thresh", "Tristana", "Trundle", "Tryndamere", "Twisted Fate", "Twitch", "Udyr", "Urgot", "Varus", "Vayne", "Veigar", "Vel'Koz", "Vex", "Vi", "Viego", "Viktor", "Vladimir", "Volibear", "Warwick", "Wukong", "Xayah", "Xerath", "Xin Zhao", "Yasuo", "Yone", "Yorick", "Yunara", "Yuumi", "Zaahen", "Zac", "Zed", "Zeri", "Ziggs", "Zilean", "Zoe", "Zyra"].sort()
+        var champList = ["Aatrox", "Ahri", "Akali", "Akshan", "Alistar", "Ambessa", "Amumu", "Anivia", "Annie", "Aphelios", "Ashe", "Aurelion Sol", "Aurora", "Azir", 
+						 "Bard", "Bel'Veth", "Blitzcrank", "Brand", "Braum", "Briar", 
+						 "Caitlyn", "Camille", "Cassiopeia", "Cho'Gath", "Corki", 
+						 "Darius", "Diana", "Dr. Mundo", "Draven", 
+						 "Ekko", "Elise", "Evelynn", "Ezreal", 
+						 "Fiddlesticks", "Fiora", "Fizz", 
+						 "Galio", "Gangplank", "Garen", "Gnar", "Gragas", "Graves", "Gwen", 
+						 "Hecarim", "Heimerdinger", "Hwei", 
+						 "Illaoi", "Irelia", "Ivern", 
+						 "Janna", "Jarvan IV", "Jax", "Jayce", "Jhin", "Jinx", 
+						 "K'Sante", "Kai'Sa", "Kalista", "Karma", "Karthus", "Kassadin", "Katarina", "Kayle", "Kayn", "Kennen", "Kha'Zix", "Kindred", "Kled", "Kog'Maw", 
+						 "LeBlanc", "Lee Sin", "Leona", "Lillia", "Lissandra", "Locke", "Lucian", "Lulu", "Lux", 
+						 "Malphite", "Malzahar", "Maokai", "Master Yi", "Mel", "Milio", "Miss Fortune", "Mordekaiser", "Morgana", 
+						 "Naafiri", "Nami", "Nasus", "Nautilus", "Neeko", "Nidalee", "Nilah", "Nocturne", "Nunu & Willump", 
+						 "Olaf", "Orianna", "Ornn", 
+						 "Pantheon", "Poppy", "Pyke", 
+						 "Qiyana", "Quinn", 
+						 "Rakan", "Rammus", "Rek'Sai", "Rell", "Renata Glasc", "Renekton", "Rengar", "Riven", "Rumble", "Ryze", 
+						 "Samira", "Sejuani", "Senna", "Seraphine", "Sett", "Shaco", "Shen", "Shyvana", "Singed", "Sion", "Sivir", "Skarner", "Smolder", "Sona", "Soraka", "Swain", "Sylas", "Syndra", 
+						 "Tahm Kench", "Taliyah", "Talon", "Taric", "Teemo", "Thresh", "Tristana", "Trundle", "Tryndamere", "Twisted Fate", "Twitch", 
+						 "Udyr", "Urgot", 
+						 "Varus", "Vayne", "Veigar", "Vel'Koz", "Vex", "Vi", "Viego", "Viktor", "Vladimir", "Volibear", 
+						 "Warwick", "Wukong", 
+						 "Xayah", "Xerath", "Xin Zhao", 
+						 "Yasuo", "Yone", "Yorick", "Yunara", "Yuumi", 
+						 "Zaahen", "Zac", "Zed", "Zeri", "Ziggs", "Zilean", "Zoe", "Zyra"].sort()
         for (let c = 0; c < champList.length; c++) {
             label = document.createElement("label")
             label.htmlFor = champList[c]
@@ -159,9 +184,9 @@
         var sideboard = document.getElementById("sideboard")
         sideboard.innerHTML += "<div style='margin-bottom: 25px;'>Champion Count: <span style='float:right'>" + champList.length + "</span></div>"
         selector = "<select id='list' style='width: 100%; border-radius: 25px; font-size: inherit; text-align: center; padding: unset;'>"
-        var listList = ["Coop vs. AI", "Arena God"].sort()
-        for (let l = 0; l < listList.length; l++) {
-            selector += "<option value='" + listList[l] + "'>" + listList[l] +"</option>"
+        var challengeList = ["Coop vs. AI", "Arena God", "Master the Enemy"].sort()
+        for (let l = 0; l < challengeList.length; l++) {
+            selector += "<option value='" + challengeList[l] + "'>" + challengeList[l] +"</option>"
         }
         selector += "</select>"
         sideboard.innerHTML += selector
@@ -209,11 +234,11 @@
         function Load(){
             var loadLists = JSON.parse(localStorage.getItem("LoLChampionTrackerLists"))
             if(loadLists != null &&  loadLists.CurrentList != null && loadLists.CurrentList != "") curList.value = loadLists.CurrentList
-            for (let l = 0; l < listList.length; l++){
-                saveStates.Lists.push({List: listList[l], States: []})
+            for (let l = 0; l < challengeList.length; l++){
+                saveStates.Lists.push({List: challengeList[l], States: []})
                 for (let c = 0; c < champList.length; c++){
                     var state = null
-                    if(loadLists != null && loadLists.Lists.find(L => L.List == listList[l]) != null && loadLists.Lists.find(L => L.List == listList[l]).States.find(C => C.Champion == champList[c]) != null) state = loadLists.Lists.find(L => L.List == listList[l]).States.find(C => C.Champion == champList[c]).Checked
+                    if(loadLists != null && loadLists.Lists.find(L => L.List == challengeList[l]) != null && loadLists.Lists.find(L => L.List == challengeList[l]).States.find(C => C.Champion == champList[c]) != null) state = loadLists.Lists.find(L => L.List == challengeList[l]).States.find(C => C.Champion == champList[c]).Checked
                     if(state != null) saveStates.Lists[l].States.push({Champion: champList[c], Checked: state})
                     else saveStates.Lists[l].States.push({Champion: champList[c], Checked: false})
                 }
